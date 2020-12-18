@@ -1,0 +1,5 @@
+export const { Home } = require('./Home/index.js')
+export const { About } = require('./About/index.js')
+export const { Skills } = require('./Skills/index.js')
+export const { MyWork } = require('./MyWork/index.js')
+export const { Contact } = require('./Contact/index.js')
