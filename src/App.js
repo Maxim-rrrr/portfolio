@@ -1,26 +1,35 @@
 import './css/style.css'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
 
 import { Home, About, Skills, MyWork, Contact } from './pages/index'
 
+import { Nav } from './components/Nav'
+
+const history = createBrowserHistory()
+
 function App() {
   return (
-    <Router>
-      <Switch>
+    <>
+      <Nav/>
 
-        <Route exact path='/' component = { Home } />
+      <Router history = { history }>
+        <Switch>
 
-        <Route exact path='/about' component={ About } />
+          <Route exact path='/' component = { Home } />
 
-        <Route exact path='/skills' component={ Skills } />
+          <Route exact path='/about' component={ About } />
 
-        <Route exact path='/my-work' component={ MyWork } />
+          <Route exact path='/skills' component={ Skills } />
 
-        <Route exact path='/contact' component={ Contact } />
+          <Route exact path='/my-work' component={ MyWork } />
 
-      </Switch>
-    </Router>
+          <Route exact path='/contact' component={ Contact } />
+
+        </Switch>
+      </Router>
+    </>
   );
 }
 
